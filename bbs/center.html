@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>[제니북스] "좋은 책 고르는 방법"</title>
+
+    <link rel="stylesheet" type="text/css" href="css/baseStyle.css">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>	
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- 메뉴 공통 디자인 js -->
+    <script type="text/javascript" src="./js/design.js"></script>
+</head>
+<body>	
+    <div id="wrap" class="container">
+       <!-- 헤더 영역 -->
+	   <header id="header">
+           <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" >
+               <div class="container">
+                   <div class="navbar-header">
+                       <button class="navbar-toggle" type="button" data-target="#navbar-collapsible" data-toggle="collapse">
+                           <span class="sr-only">Toggle navigation</span> 
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                       </button>
+                       <a class="navbar-brand" href="./main.html">제니 북스</a>
+                   </div>
+                   <div class="navbar-collapse collapse" id="navbar-collapsible">
+                       <ul class="nav navbar-nav navbar-left">
+                           <li><a href="./login.html">로그인</a></li>
+                           <li><a href="./register.html">회원가입</a></li>
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티<span class="caret"></span></a>
+                               <ul class="dropdown-menu" role="menu">
+                                   <li><a href="./notice.html">공지 사항</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="./review.html">리뷰 게시판</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="./center.html">고객 센터</a></li>
+                               </ul>
+                           </li>
+                           <li>&nbsp;</li>
+                       </ul>
+                       
+                       <form class="navbar-form" action="./bookList.html" method="get"> <!-- method="post" -->
+                           <div class="col-sm-2">
+                               <select class="form-control" data-style="btn-info" name="search" style="width: 100%;">
+                                   <option value="bookname" selected=selected>제목</option>
+                                   <option value="author" >저자</option>
+                                   <option value="publisher" >출판사</option>
+                               </select>
+                           </div>
+                           <div class="col-sm-5">
+                               <div class="form-group" style="display: inline;">
+                                   <div class="input-group col-sm-12" >
+                                       <input class="form-control" type="text" placeholder="제목, 저자, 출판사 검색" name="keyword" id="keyBar" value=""> 
+                                       <span class="input-group-addon">
+                                           <span class="glyphicon glyphicon-search"></span>
+                                       </span>
+                                   </div>
+                               </div>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </nav>
+		</header>
+		<br>
+		
+        <!-- 컨테이너 영역 -->
+		<div class="container" style="position: relative;">
+            <!-- 왼쪽 사이드 메뉴 -->
+			<aside class="col-md-2">
+                <div class="list-group">
+                    <a class="list-group-item all-menu-category" href='javascript:void(0)'>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        &nbsp;
+                        <strong>카테고리</strong>
+                    </a>
+                    <a class="list-group-item" href="./bookList.html">해외 도서</a>
+                    <a class="list-group-item" href="./bookList.html">잡지</a>
+                    <a class="list-group-item" href="./bookList.html">과학/공학</a>
+                    <a class="list-group-item" href="./bookList.html">자기계발</a>
+                    <a class="list-group-item" href="./bookList.html">컴퓨터/IT</a>
+                    <a class="list-group-item" href="./bookList.html">유아</a>
+                    <a class="list-group-item" href="./bookList.html">어린이</a>
+                    <a class="list-group-item" href="./bookList.html">시/에세이</a>
+                    <a class="list-group-item" href="./bookList.html">취업/수험서</a>
+                    <a class="list-group-item" href="./bookList.html">학습/참고서</a>
+                    <a class="list-group-item" href="./bookList.html">국어/외국어</a>
+                    <a class="list-group-item" href="./bookList.html">가정/생활/요리</a>
+                    <a class="list-group-item" href="./bookList.html">경제/경영</a>
+                    <a class="list-group-item" href="./bookList.html">취미/레저</a>
+                    <a class="list-group-item" href="./bookList.html">사회</a>
+                    <a class="list-group-item" href="./bookList.html">종교</a>
+                    <a class="list-group-item" href="./bookList.html">소설</a>
+                    <a class="list-group-item" href="./bookList.html">만화</a>
+                    <a class="list-group-item" href="./bookList.html">기타</a>
+                </div>
+            </aside>
+            
+            <div class="board-menu-div">
+                <span class="glyphicon glyphicon-remove" style="float:right; margin-right: 15px; margin-top: 10px;"></span>
+                <div class="row col-md-12"><br></div>
+                <ul class="board-ul-list">
+                    <li><strong>도서 카테고리</strong><hr></li>
+                    <li><a href="./bookList.html">해외 도서</a></li>
+                    <li><a href="./bookList.html">잡지</a></li>
+                    <li><a href="./bookList.html">과학/공학</a></li>
+                    <li><a href="./bookList.html">자기계발</a></li>
+                    <li><a href="./bookList.html">컴퓨터/IT</a></li>
+                    <li><a href="./bookList.html">유아</a></li>
+                    <li><a href="./bookList.html">어린이</a></li>
+                    <li><a href="./bookList.html">시/에세이</a></li>
+                    <li><a href="./bookList.html">취업/수험서</a></li>
+                    <li><a href="./bookList.html">학습/참고서</a></li>
+                    <li><a href="./bookList.html">국어/외국어</a></li>
+                    <li><a href="./bookList.html">가정/생활/요리</a></li>
+                    <li><a href="./bookList.html">경제/경영</a></li>
+                    <li><a href="./bookList.html">취미/레저</a></li>
+                    <li><a href="./bookList.html">사회</a></li>
+                    <li><a href="./bookList.html">종교</a></li>
+                    <li><a href="./bookList.html">소설</a></li>
+                    <li><a href="./bookList.html">만화</a></li>
+                    <li><a href="./bookList.html">기타</a></li>
+                </ul>
+                <ul class="board-ul-list">
+                    <li><strong>커뮤니티</strong><hr></li>
+                    <li><a href="./review.html">자유 게시판</a></li>
+                    <li><a href="./review.html">비밀 게시판</a></li>                    
+                    <li><a href="./review.html">리뷰 게시판</a></li>
+                    <li><a href="./review.html">웹소설 도전</a></li>
+                </ul>
+                <ul class="board-ul-list">
+                    <li><strong>제니북스</strong><hr></li>
+                    <li><a href="./companyInfo.html">회사소개</a></li>
+                    <li><a href="./notice.html">공지사항</a></li>
+                    <li><a href="./notice.html">이벤트</a></li>
+                    <li><a href="./companyLocation.html">찾아오시는 길</a></li>                    
+                </ul>
+                <ul class="board-ul-list">
+                    <li><strong>고객센터</strong><hr></li>
+                    <li><a href="./center.html">책 찾아주세요</a></li>
+                    <li><a href="./faq.html">자주묻는 질문</a></li>
+                    <li><a href="./center.html">QnA</a></li>
+                    <li><a href="./center.html">구매 후기</a></li>
+                </ul>
+                <ul class="board-ul-list">                    
+                    <li><strong>회원정보</strong><hr></li>
+                    <li><a href="./userInfo.html">정보수정</a></li>
+                    <li><a href="./cart.html">장바구니</a></li>
+                    <li><a href="./order.html">구매내역</a></li>
+                    <li><a href="./userTasteBooks.html">추천도서</a></li>
+                </ul>
+            </div>
+            
+            <article class="col-md-10">
+                <div class="row"><span style="float: right;"><a href="./main.html">Home</a> &gt; <a href="#">고객센터</a> &gt; <a href="./center.html">고객센터 QnA</a></span></div>
+                <h2 style="float: left;">고객센터 QnA</h2>
+                <br>
+                
+                <div style="float: right;">
+                    <a class="btn btn-primary" href="./boardInsert.html" style="float: right;">글 작성하기</a>
+                </div>
+                
+                <table class="table">
+                    <tr>
+                        <td class="col-md-1"><strong>글 번호</strong></td>
+                        <td class="col-md-7"><strong>제목</strong></td>
+                        <td class="col-md-2"><strong>사용자 명</strong></td>
+                        <td class="col-md-2"><strong>날짜</strong></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><a href="./centerDetail.html">상품 문의 드립니다. </a></td>
+                        <td>a1234@nate.com</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>&nbsp;&nbsp; └[re] <a href="./centerDetail.html">안녕하세요 고객님 </a></td>
+                        <td>관리자</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><a href="./centerDetail.html">아 진짜 배송 너무 느린거 아닙니까?! </a></td>
+                        <td>a1234@nate.com</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>&nbsp;&nbsp; └[re] <a href="./centerDetail.html">안녕하세요 고객님 </a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><a href="./centerDetail.html">신간 도서 목록 나오게 해주세요~ </a></td>
+                        <td>a1234@daum.com</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>&nbsp;&nbsp; └[re] <a href="./centerDetail.html">안녕하세요 고객님 </a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="./centerDetail.html">도서에 관해 질문드립니다.</a></td>
+                        <td>a1234@naver.com</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>&nbsp;&nbsp; └[re] <a href="./centerDetail.html">안녕하세요 고객님 </a></td>
+                        <td>관리자</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="./centerDetail.html">안녕하세요 배송관련 질문이요 </a></td>
+                        <td>a1234@naver.com</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>&nbsp;&nbsp; └[re] <a href="./centerDetail.html">안녕하세요 고객님 </a></td>
+                        <td>관리자</td>
+                        <td>2020-06-04</td>
+                    </tr>
+                </table>
+                
+                <div align="center">
+                    <ul class="pagination">
+                        <!-- 이전페이지표시 -->
+                        <li class="disabled"><a href="#">Prev</a></li>
+                        <li class="active"><a href="#"> 1 </a></li>
+                        <li><a href="#"> 2 </a></li>
+                        <li class="disabled"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+                
+                <form action="./center.html" method="get"> <!-- method="post" -->
+                    <div align="center">
+                        <div align="center">
+                            <div class="col-md-2">
+                                <select name="sWhat" class="form-control">
+                                    <option value="centertitle">제목</option>
+                                    <option value="centercontent">내용</option>
+                                    <option value="email">email</option>
+                                </select>
+                            </div>
+                            <div class="col-md-7">
+                                <input class="form-control" type="text" name="schWord" id="schWord" value="" maxlength="30">
+                            </div>
+                            <div class="col-md-3">
+                                <input class="btn btn-primary btn-block" type="submit" value="검색">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </article>
+		</div>
+		
+        <hr>
+        
+        <!-- 하단 footer영역 -->
+		<footer id="footer">			
+            <div class="container">
+                <div class="row" style="width:90%; margin: auto;">
+                    <div class="col-xs-6 col-sm-6 col-md-3 column">
+                        <h4>Information</h4>
+                        <ul class="nav">
+                            <li><a href="./bookList.html">Books</a></li>
+                            <li><a href="./notice.html">공지 사항</a></li>
+                            <li><a href="./review.html">리뷰게시판</a></li>
+                            <li><a href="./center.html">고객센터</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-3 column">
+                        <h4>Follow Us</h4>
+                        <ul class="nav">
+                            <li><a href="https://twitter.com/">Twitter</a></li>
+                            <li><a href="http://www.facebook.com/">Facebook</a></li>
+                            <li><a href="http://www.google.co.kr/">Google</a></li>
+                            <li><a href="http://www.naver.com/">Naver</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-3 column">
+                        <h4>Contact Us</h4>
+                        <ul class="nav">
+                            <li><a href="./companyInfo.html">회사소개</a></li>
+                            <li><a href="./companyLocation.html">찾아오시는 길</a></li>
+                            <li><a href="#">Management</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-md-3 column">
+                        <h4>Customer Service</h4>
+                        <ul class="nav">
+                            <li><a href="./userInfo.html">회원 정보</a></li>
+                            <li><a href="./cart.html">장바 구니</a></li>
+                            <li><a href="./order.html">주문 내역</a></li>
+                            <li><a href="./userTasteBooks.html">추천 도서</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+		</footer>
+	</div>
+</body>
+</html>

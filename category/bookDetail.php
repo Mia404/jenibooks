@@ -5,7 +5,7 @@
 	<?php require_once($_SERVER['DOCUMENT_ROOT']."/incLib/lib.php"); ?>
 </head>
 <body>	
-    <div id="wrap" class="container">
+    <div id="wrap" class="container"> 
     	<?php require_once($_SERVER['DOCUMENT_ROOT']."/header.php"); ?>
     	
         <!-- 컨테이너 영역 -->

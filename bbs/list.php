@@ -35,11 +35,11 @@
                     # 글 작성 버튼 출력 여부, 사용자 상태값이 존재하는 경우
                     if(isset($_SESSION['USER_STATE'])){
                         # 사용자 권한이 관리자이고, 게시판 종류가 이벤트일 경우
-                        if($_SESSION['USER_STATE'] == 2 && $row['BBS_TYPE'] == 'EVENT') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType=<?= $bbs_type ?>' style='float: right;'>글 작성하기</a></div>";
+                        if($_SESSION['USER_STATE'] == 2 && $row['BBS_TYPE'] == 'EVENT') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType={$bbs_type}' style='float: right;'>글 작성하기</a></div>";
                         # 사용자 권한이 관리자이고, 게시판 종류가 공지사항일 경우
-                        if($_SESSION['USER_STATE'] == 2 && $row['BBS_TYPE'] == 'NOTICE') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType=<?= $bbs_type ?>' style='float: right;'>글 작성하기</a></div>";
+                        if($_SESSION['USER_STATE'] == 2 && $row['BBS_TYPE'] == 'NOTICE') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType={$bbs_type}' style='float: right;'>글 작성하기</a></div>";
                         # 사용자 권한이 관리자 또는 회원이고, 게시판 종류가 자유게시판일 경우
-                        if(($_SESSION['USER_STATE'] == 2 || $_SESSION['USER_STATE'] == 0) && $row['BBS_TYPE'] == 'FREE') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType=<?= $bbs_type ?>' style='float: right;'>글 작성하기</a></div>";
+                        if(($_SESSION['USER_STATE'] == 2 || $_SESSION['USER_STATE'] == 0) && $row['BBS_TYPE'] == 'FREE') echo "<div style='float: right;'><a class='btn btn-primary' href='/bbs/write.php?bbsType={$bbs_type}' style='float: right;'>글 작성하기</a></div>";
                     }
                 ?>
                 <div align="center">

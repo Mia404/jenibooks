@@ -3,6 +3,11 @@
 <head>
 	<title>[제니북스] "좋은 책 고르는 방법"</title>
 	<?php require_once($_SERVER['DOCUMENT_ROOT']."/incLib/lib.php"); ?>
+	<style>
+        #preContent{
+            all: unset;
+        }
+	</style>
 </head>
 <body>	
     <div id="wrap" class="container">
@@ -47,22 +52,23 @@
                     <form method="post" id="viewForm">
                         <table class="table">
                             <tr>
-                                <th>제목</th>
-                                <td><input class="form-control" type="text" readonly="readonly" value="<?= $row['BBS_TITLE'] ?>" style="background-color: white"></td>
+                                <th width="10%;">제목</th>
+                                <td width="90%;"><input type="text" readonly="readonly" value="<?= $row['BBS_TITLE'] ?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" size="100%"></td>
                             </tr>
                             <tr>
-                                <th>날짜</th>
-                                <td><input class="form-control" type="text" readonly="readonly" value="<?= $row['BBS_DATE'] ?>" style="background-color: white"></td>
+                                <th width="10%;">날짜</th>
+                                <td width="90%;"><input  type="text" readonly="readonly" value="<?= $row['BBS_DATE'] ?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" size="100%"></td>
                             </tr>
                             <tr>
-                                <th>이름</th>
-                                <td><input class="form-control" type="text" readonly="readonly" value="<?= $row['USER_ID'] ?>" style="background-color: white"></td>
+                                <th width="10%;">이름</th>
+                                <td width="90%;"><input  type="text" readonly="readonly" value="<?= $row['USER_ID'] ?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" size="100%"></td>
                             </tr>
                             <tr>
-                                <th>내용</th>
-                                <td><pre><?= $row['BBS_CONTENT'] ?></pre></td>
+                                <th width="10%;">내용</th>
+                                <td width="90%;"><pre id="preContent"><?= $row['BBS_CONTENT'] ?></pre></td>
                             </tr>
                         </table>
+                        <hr>
                         <div style="float:left;"><a class="btn btn-primary" style="text-decoration: none" href="/bbs/list.php?bbsType=<?= $bbs_type ?>&pageNum=<?= $pageNum ?>">목록으로 이동</a></div>
                         <?php
                             # 수정,삭제 버튼 활성화(글작성ID와 세션사용자ID가 같은경우)

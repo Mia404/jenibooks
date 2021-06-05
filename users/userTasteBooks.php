@@ -8,6 +8,23 @@
     <div id="wrap" class="container">
     	<?php require_once($_SERVER['DOCUMENT_ROOT']."/header.php"); ?>
 		
+		<?php
+            # 추천 도서 페이지
+            
+    		# 로그인 세션정보 확인
+    		if(!isset($_SESSION['USER_ID'])){
+    		    echo "<script>alert('로그인이 필요합니다.');location.href='/login/login.php';</script>";
+    		}
+    		
+    		
+    		# 사용자가 주문한 데이터가 없을 경우
+    		# 사용자들이 가장 많이 주문한 도서 정보 데이터를 가져온다.
+    		
+    		# 사용자 주문 데이터가 존재할 경우
+    		# 가장 많이 주문한 카테고리에 한하여 관련 카테고리 내에 랜덤한 도서 정보 데이터를 가져온다.
+    		
+    		# 그 뒤 자바스크립트(springy)에서 사용되는 형식에 맞게 php 문자열을 만들어서, 아래 자바스크립트 노드 생성부에 적절하게 만들어 넣어준다.   
+		?>
         <!-- 컨테이너 영역 -->
 		<div class="container" style="position: relative;">
             <?php require_once($_SERVER['DOCUMENT_ROOT']."/aside.php"); ?>

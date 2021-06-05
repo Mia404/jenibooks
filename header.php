@@ -49,6 +49,8 @@
                            <li class="divider"></li>
                            <li><a href="/bbs/list.php?bbsType=NOTICE">공지 사항</a></li>
                            <li class="divider"></li>
+                           <li><a href="/bbs/list.php?bbsType=EVENT">이벤트</a></li>
+                           <li class="divider"></li>
                            <li><a href="/bbs/center.php">고객 센터</a></li>
                        </ul>
                    </li>

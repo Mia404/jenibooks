@@ -13,10 +13,10 @@
         $files = $_FILES['upload'];
         if ($files['tmp_name']) {
             # 임시 파일 배열변수 선언 및 확장자명 설정
-            // $tmp_name = array();
             $tmp_file = array();
             $exp_name = pathinfo($files['name']);
             
+            # 임시파일명, 확장자, 사이즈 설정
             $tmp_file['name'] = preg_replace("/\s+/", "", strtolower($exp_name['filename']));
             $tmp_file['ext'] = strtolower($exp_name['extension']);
             $tmp_file['size'] = $files['size'];
@@ -57,6 +57,8 @@
             
             # 이미지 업로드
             move_uploaded_file($data['tmp_name'], $upload_dir.$data['up_name']);
+            
+            # 업로드 파일에 대한 정보를 log처럼 남기는 작업 추후 필요함.
             
             # 결과 리턴 JSON
             echo '{"filename" : "'.$data['up_name'].'", "uploaded" : 1, "url":"'.$default_dir.$data['up_name'].'"}';

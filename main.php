@@ -67,16 +67,21 @@
                 <!-- 윗 라인 아래 라인 구분 -->
                 <div class="row col-md-12"><br></div>                                
                 
+				<?php 
+                    # 베스트 셀러
+                    # 가장 많이 팔린 책 중에서 랜덤으로 DB jobScheduler를 통해 가져오는 처리가 추후에는 필요함.
+                    # 현재는 직접 값을 HTML 엘리먼트에 설정함.
+                ?>  
                 <!-- 베스트 셀러 영역-->
                 <div class="row col-md-5" >
                     <div class="row"><label class="main-books-label">베스트 셀러</label></div>
                     <div class="main-thumbnail">
-                        <a href="/bookDetail.php">
+                        <a href="/category/bookDetail.php?bookNum=726&category=경제/경영">
                             <img src="http://image.kyobobook.co.kr/images/cardnews/9788935213207_1.jpg" class="main-thumbnail-img">
                         </a>
                         <div class="main-thumbnail-caption">
                             <div class="wine-comemnt">
-                                <a href="/bookDetail.php">
+                                <a href="/category/bookDetail.php?bookNum=726&category=경제/경영">
                                     <label class="scrapIcon">보러가기  <img src="/resources/images/scrap.png" width="40px"height="30px"></label>
                                 </a>
                             </div>
@@ -91,51 +96,52 @@
                 
                 <div class="row col-md-1"></div>
                 
+                <?php 
+                    # 공지사항 조회 상위 5개
+                    $sql = "SELECT a.BBS_NO, a.BBS_TYPE, a.USER_ID, a.BBS_TITLE, a.BBS_DATE, b.BBS_NAME_KR 
+                              FROM jeni_bbs_tb a, jeni_bbs_list_tb b
+                             WHERE A.BBS_TYPE = B.BBS_TYPE AND a.BBS_TYPE = 'NOTICE' order by BBS_NO desc LIMIT 5";
+                    $result = $conn->query($sql);
+                ?>
                 <!-- 공지사항 -->
                 <div class="row col-md-6">
                     <div class="row"><label class="main-books-label">공지사항</label></div>
                     <table class="table table-striped table-bordered table-hover" style="height: 285px; width: 100%;">
-                        <tr>
+                        <tr height="10%;">
                             <th class="col-md-6">제목</th>
                             <th class="col-md-2" style="text-align: center;">날짜</th>
                         </tr>
-                        <tr>
-                            <td><a href="#"> [제니북스] 모든 상품이 무료 배송!</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[공지] 일부 도서 구매 및 다운로드 제한</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[발표] 제 1회 북스토어 로맨스 소설 공모전</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[안내] 컬쳐랜드 문화상품권 결제 제한</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[제니북스] 6/4 배송 휴무 안내</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
+                        <?php
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                                echo "<tr><td><a href='/bbs/view.php?bbsNo={$row['BBS_NO']}&bbsType={$row['BBS_TYPE']}'>{$row['BBS_TITLE']}</a></td><td align='center'>{$row['BBS_DATE']}</td></tr>";
+                            }
+                        }else{
+                            echo "<tr><td colspan='2' align='center'>조회된 데이터가 없습니다.</td></tr>";
+                        }
+                        ?>
                     </table>
                 </div>      
                 
                 <!-- 윗 라인 아래 라인 구분 -->
                 <div class="row col-md-12"><br></div>
-                   
+                
+                <?php 
+                    # 오늘의 책
+                    # 임의의 책 또는 가장 많이 팔린 책중에서 랜덤으로 DB jobScheduler를 통해 가져오는 처리가 추후에는 필요함.
+                    # 현재는 직접 값을 HTML 엘리먼트에 설정함.
+                ?>  
                 <!-- 오늘의 책 영역-->
                 <div class="row col-md-5" >
                     <div class="row"><label class="main-books-label">오늘의 책</label></div>
                     <div class="main-thumbnail">
-                        <a href="/bookDetail.php">
+                        <a href="/category/bookDetail.php?bookNum=727&category=자기계발">
                             <img src="http://image.kyobobook.co.kr/images/cardnews/4808960542587_1.jpg" class="main-thumbnail-img">
                         </a>
                         <div class="main-thumbnail-caption">
                             <div class="wine-comemnt">
-                                <a href="/bookDetail.php">
-                                    <label class="scrapIcon">보러가기  <img src="/resources/images/scrap.png" width="40px"height="30px"></label>
+                                <a href="/category/bookDetail.php?bookNum=727&category=자기계발">
+                                    <label class="scrapIcon">보러가기  <img src="/resources/images/scrap.png" width="40px"height="30px" ></label>
                                 </a>
                             </div>
                         </div>			
@@ -149,34 +155,30 @@
                 
                 <div class="row col-md-1"></div>
                 
+                <?php 
+                    # 이벤트 조회 상위 5개
+                    $sql = "SELECT a.BBS_NO, a.BBS_TYPE, a.USER_ID, a.BBS_TITLE, a.BBS_DATE, b.BBS_NAME_KR
+                              FROM jeni_bbs_tb a, jeni_bbs_list_tb b
+                             WHERE A.BBS_TYPE = B.BBS_TYPE AND a.BBS_TYPE = 'EVENT' order by BBS_NO desc LIMIT 5";
+                    $result = $conn->query($sql);
+                ?>
                 <!-- 이벤트 -->
                 <div class="row col-md-6">
                     <div class="row"><label class="main-books-label">이벤트</label></div>
                     <table class="table table-striped table-bordered table-hover" style="height: 285px; width: 100%;">
-                        <tr>
+                        <tr height="10%;">
                             <th class="col-md-6">제목</th>
                             <th class="col-md-2" style="text-align: center;">날짜</th>
                         </tr>
-                        <tr>
-                            <td><a href="#">[OPEN] 시간 순삭, 꿀잼 보장! 밤도둑 대여점</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[EVENT] 히가시노 게이고 "교통경찰의 밤" 출간!</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[제니ONLY] "만년 꼴찌를 1% 명문대생으로 만든 기적의 독서법" 출간!</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[37%▼] 와카타케 나나미 "하자키 시리즈" 특가 세트 기간 한정 판매!</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
-                        <tr>
-                            <td><a href="#">[포인트백] 토마 피케티 "자본과 이데올로기" 출간!</a></td>                            
-                            <td align="center">2020-06-03</td>
-                        </tr>		
+                        <?php
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                                echo "<tr><td><a href='/bbs/view.php?bbsNo={$row['BBS_NO']}&bbsType={$row['BBS_TYPE']}'>{$row['BBS_TITLE']}</a></td><td align='center'>{$row['BBS_DATE']}</td></tr>";
+                            }
+                        }else{
+                            echo "<tr><td colspan='2' align='center'>조회된 데이터가 없습니다.</td></tr>";
+                        }
+                        ?>                        
                     </table>
                 </div>                
 			</article>

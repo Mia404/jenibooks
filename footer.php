@@ -6,7 +6,7 @@
                 <h4>Information</h4>
                 <ul class="nav">
                     <li><a href="/category/bookList.php?category=전체보기">Books</a></li>
-                    <li><a href="/bbs/review.php">리뷰게시판</a></li>
+                    <li><a href="/bbs/list.php?bbsType=FREE">자유게시판</a></li>
                     <li><a href="/bbs/list.php?bbsType=NOTICE">공지사항</a></li>
                     <li><a href="/bbs/list.php?bbsType=EVENT">이벤트</a></li>
                 </ul>
@@ -35,7 +35,7 @@
                     <li><a href="/users/userInfo.php">회원 정보</a></li>
                     <li><a href="/users/cart.php">장바 구니</a></li>
                     <li><a href="/users/orderList.php">주문 내역</a></li>
-                    <li><a href="/users/userTasteBooks.php">추천 도서</a></li>
+                    <li><a href="/users/userTasteBooks.php">주문 시각화</a></li>
                 </ul>
             </div>
         </div>

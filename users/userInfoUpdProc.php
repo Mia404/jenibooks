@@ -1,4 +1,6 @@
 <?php
+    # 회원 정보 수정 처리
+
     # DB 연결
     require_once($_SERVER['DOCUMENT_ROOT']."/incLib/dbconn.php");
     

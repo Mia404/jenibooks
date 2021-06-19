@@ -31,7 +31,7 @@
                             <td style="width: 250px;">
                             	<p align="center">
                             		<a href="/category/bookDetail.php?bookNum=<?= $row['BOOK_NO'] ?>&category=<?= $category ?>" title="<?= $row['BOOK_NAME']; ?>">
-                            			<img width="140px" height="185px" alt="<?= $row['BOOK_NAME']; ?>" src="<?= $row['BOOK_IMAGE']; ?>" onerror="javascript:this.src='/resources/images/book_image_not_found.png'">
+                            			<img width="140px" height="185px" alt="<?= $row['BOOK_NAME']; ?>" src="<?= $row['BOOK_IMAGE']; ?>" onerror="javascript:this.src='/resources/images/book_image_not_found.png'" ondragstart="return false">
                             		</a>
                             	</p>
                             	<p align="center" ><a href="/category/bookDetail.php?bookNum=<?= $row['BOOK_NO'] ?>&category=<?= $category ?>" title="<?= $row['BOOK_NAME']; ?>"><strong style="white-space:nowrap;"><?= $title ?></strong></a></p>

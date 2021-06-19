@@ -126,7 +126,7 @@
                             <td colspan="2" align="center">
                                 <input class="btn btn-primary" type="button" value="수정" id="editBtn">
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a class="btn btn-danger" href="#">탈퇴</a>
+                                <input class="btn btn-danger" type="button" value="탈퇴" id="withdrawBtn">
                             </td>
                         </tr>
                     </table>
@@ -165,6 +165,16 @@
 					var result = confirm("회원 정보를 수정하시겠습니까?"); 
 					if(result) { 
 						// 회원정보 수정 처리
+						$("#userInfoForm").submit();
+					}
+				});
+				
+				/* 탈퇴버튼 클릭 시 */ 
+				$("#withdrawBtn").on("click", function(){
+					var result = confirm("탈퇴하시겠습니까?"); 
+					if(result) { 
+						// 탈퇴 처리
+						$("#userInfoForm").attr("action", "/users/userWithdrawProc.php");
 						$("#userInfoForm").submit();
 					}
 				});

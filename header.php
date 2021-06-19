@@ -30,9 +30,9 @@
                        <ul class="dropdown-menu navbar-link" role="menu">
                            <li><a href="/users/cart.php">장바구니</a></li>
                            <li class="divider"></li>
-                           <li><a href="/users/orderList.php">주문 내역</a></li>
+                           <li><a href="/users/orderList.php">주문내역</a></li>
                            <li class="divider"></li>
-                           <li><a href="/users/userTasteBooks.php">추천도서</a></li>
+                           <li><a href="/users/userTasteBooks.php">주문시각화</a></li>
                            <li class="divider"></li>	
                            <li><a href="/login/logout.php">로그아웃</a></li>
                        </ul>
@@ -44,14 +44,14 @@
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티<span class="caret"></span></a>
                        <ul class="dropdown-menu" role="menu">
 						   <li><a href="/bbs/list.php?bbsType=FREE">자유 게시판</a></li>
-						   <li class="divider"></li>
-                           <li><a href="/bbs/review.php">리뷰 게시판</a></li>
+						   <!-- <li class="divider"></li> -->
+                           <!-- <li><a href="#">리뷰 게시판</a></li> -->
                            <li class="divider"></li>
                            <li><a href="/bbs/list.php?bbsType=NOTICE">공지 사항</a></li>
                            <li class="divider"></li>
                            <li><a href="/bbs/list.php?bbsType=EVENT">이벤트</a></li>
-                           <li class="divider"></li>
-                           <li><a href="/bbs/center.php">고객 센터</a></li>
+                           <!-- <li class="divider"></li> -->
+                           <!-- <li><a href="#">고객 센터</a></li> -->
                        </ul>
                    </li>
                    <li>&nbsp;</li>

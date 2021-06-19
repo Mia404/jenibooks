@@ -61,11 +61,9 @@
     <ul class="board-ul-list">
         <li><strong>커뮤니티</strong><hr></li>
         <li><a href="/bbs/list.php?bbsType=FREE">자유 게시판</a></li>
-        <!-- 
-        <li><a href="#">비밀 게시판</a></li>                    
-        <li><a href="#">리뷰 게시판</a></li>
-        <li><a href="#">웹소설 도전</a></li>
-         -->
+        <li><a href="/review.php">비밀 게시판</a></li>                    
+        <li><a href="/review.php">리뷰 게시판</a></li>
+        <li><a href="/review.php">웹소설 도전</a></li>
     </ul>
     <ul class="board-ul-list">
         <li><strong>제니북스</strong><hr></li>
@@ -74,18 +72,18 @@
         <li><a href="/bbs/list.php?bbsType=EVENT">이벤트</a></li>
         <li><a href="/company/companyLocation.php">찾아오시는 길</a></li>                    
     </ul>
+    <ul class="board-ul-list">
+        <li><strong>고객센터</strong><hr></li>
+        <li><a href="/center.php">책 찾아주세요</a></li>
+        <li><a href="/center/faq.php">자주묻는 질문</a></li>
+        <li><a href="/center.php">QnA</a></li>
+        <li><a href="/center.php">구매 후기</a></li>
+    </ul>
     <ul class="board-ul-list">                    
         <li><strong>회원정보</strong><hr></li>
         <li><a href="/users/userInfo.php">정보수정</a></li>
         <li><a href="/users/cart.php">장바구니</a></li>
         <li><a href="/users/orderList.php">주문내역</a></li>
-        <li><a href="/users/userTasteBooks.php">주문시각화</a></li>
-    </ul>
-    <ul class="board-ul-list">
-        <li><strong>고객센터</strong><hr></li>
-        <!-- <li><a href="/center.php">책 찾아주세요</a></li> -->
-        <li><a href="/center/faq.php">FAQ</a></li>
-        <!-- <li><a href="/center.php">QnA</a></li> -->
-        <!-- <li><a href="/center.php">구매 후기</a></li> -->
+        <li><a href="/users/userTasteBooks.php">추천도서</a></li>
     </ul>
 </div>

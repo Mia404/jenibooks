@@ -34,11 +34,11 @@
                         </div>
                         
                         <div class="item">
-                            <img src="/resources/images/intro-bg.jpg" alt="이벤트 게시판" style="width:100%; height: 350px;">
+                            <img src="/resources/images/intro-bg.jpg" alt="리뷰 게시판" style="width:100%; height: 350px;">
                             <div class="carousel-caption">
-                                <h3>지금 당장 이벤트를 확인하세요!</h3>
-                                <p>추첨을 통해 상품을 드립니다!</p>
-                                <p><a class="btn btn-lg btn-primary" href="/bbs/list.php?bbsType=EVENT" role="button">이벤트 게시판 이동</a></p>
+                                <h3>책에 대한 리뷰를 작성해보세요!</h3>
+                                <p>여러 사람들과 책에 대한 다양한 정보를 공유하세요!</p>
+                                <p><a class="btn btn-lg btn-primary" href="/review.php" role="button">리뷰 게시판 이동</a></p>
                             </div>
                         </div>
                         

@@ -1,6 +1,6 @@
 제니북스 온라인 서점 프로젝트
 =============
-프로젝트 주소 : https://github.com/Mia404/jenibooks.git
+프로젝트 주소 : https://github.com/Mia404/jenibooks
 마크다운 참고 : https://gist.github.com/ihoneymon/652be052a0727ad59601
 
 # 1. DB 테이블 컬럼 상태값

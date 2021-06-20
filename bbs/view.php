@@ -74,12 +74,26 @@
                             # 수정,삭제 버튼 활성화(글작성ID와 세션사용자ID가 같은경우)
                             if(isset($_SESSION['USER_ID'])){
                                 if($_SESSION['USER_ID'] == $row['USER_ID']){
+                                    # 글 작성 버튼 출력 여부, 사용자 상태값이 존재하는 경우
+                                    if(isset($_SESSION['USER_STATE'])){
+                                        # 사용자 권한이 관리자 또는 회원이고, 게시판 종류가 이벤트, 공지사항인 경우
+                                        if($_SESSION['USER_STATE'] == 2 && ($row['BBS_TYPE'] == 'EVENT' || $row['BBS_TYPE'] == 'NOTICE')){
                         ?>
-                                    <div style="float:right;"">
-                						<input type="button" class="btn btn-default" value="수정" id="updBtn">
-                						<input type="button" class="btn btn-default" value="삭제" id="delBtn">
-                                    </div>
-                        <?php   
+                                        <div style="float:right;">
+                    						<input type="button" class="btn btn-default" value="수정" id="updBtn">
+                    						<input type="button" class="btn btn-default" value="삭제" id="delBtn">
+                                        </div>
+                        <?php       
+                                        # 사용자 권한이 관리자 또는 회원이고, 게시판 종류가 자유게시판일 경우
+                                        }else if(($_SESSION['USER_STATE'] == 0 || $_SESSION['USER_STATE'] == 2) && $row['BBS_TYPE'] == 'FREE'){
+                        ?>
+                                        <div style="float:right;">
+                    						<input type="button" class="btn btn-default" value="수정" id="updBtn">
+                    						<input type="button" class="btn btn-default" value="삭제" id="delBtn">
+                                        </div>
+						<?php
+                                        }
+                                    }
                                 }
                             }
                         ?>
